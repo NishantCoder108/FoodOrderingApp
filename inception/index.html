@@ -3,9 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Namaste React</title>
+    <title>Namaste React 🛩️</title>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <div id="root"></div>
+    <script>
+      const h1Ele = document.createElement("h1");
+      h1Ele.innerHTML = "Hello World From JavaScript";
+
+      const rootEle = document.getElementById("root");
+      rootEle.append(h1Ele);
+    </script>
   </body>
 </html>
