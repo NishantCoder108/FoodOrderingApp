@@ -8,13 +8,26 @@
   <body>
     <div id="root"></div>
 
+    <!-- importing react libraray, thats used for creating element -->
     <script
       crossorigin
       src="https://unpkg.com/react@18/umd/react.development.js"
     ></script>
+    <!-- importing reactdom library,thats used for dom manipulation -->
     <script
       crossorigin
       src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
     ></script>
+
+    <script>
+      const element = React.createElement(
+        "h1",
+        {},
+        "Hello World from React CDN"
+      );
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+
+      root.render(element);
+    </script>
   </body>
 </html>
