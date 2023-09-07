@@ -1,0 +1,22 @@
+{
+  "name": "learn-react",
+  "version": "1.0.0",
+  "description": "Learn React by Nishant Kumar",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NishantCoder108/NamasteReact.git"
+  },
+  "author": "Nishant Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NishantCoder108/NamasteReact/issues"
+  },
+  "homepage": "https://github.com/NishantCoder108/NamasteReact#readme",
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  }
+}
