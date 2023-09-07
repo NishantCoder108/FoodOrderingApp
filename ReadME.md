@@ -8,5 +8,4 @@
       <a href="#">What is crossorigin ?</a>
     </li>
 
-
   </ol>
