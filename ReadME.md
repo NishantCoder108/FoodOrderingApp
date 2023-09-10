@@ -27,78 +27,7 @@
     <li>
       <a href="#what-is-tree-shaking">What is Tree Shaking ?</a>
     </li>
-    <li>
-      <a href="#">What is crossorigin ?</a>
-    </li>
-    <li>
-      <a href="#">What is crossorigin ?</a>
-    </li>
-    <li>
-      <a href="#">What is crossorigin ?</a>
-    </li>
-    <li>
-      <a href="#">What is crossorigin ?</a>
-    </li>
-    <li>
-      <a href="#">What is crossorigin ?</a>
-    </li>
-    <li>
-      <a href="#">What is crossorigin ?</a>
-    </li>
-    <li>
-      <a href="#">What is crossorigin ?</a>
-    </li>
-    <li>
-      <a href="#">What is crossorigin ?</a>
-    </li>
-    <li>
-      <a href="#">What is crossorigin ?</a>
-    </li>
-    <li>
-      <a href="#">What is crossorigin ?</a>
-    </li>
-    <li>
-      <a href="#">What is crossorigin ?</a>
-    </li>
-    <li>
-      <a href="#">What is crossorigin ?</a>
-    </li>
-    <li>
-      <a href="#">What is crossorigin ?</a>
-    </li>
-    <li>
-      <a href="#">What is crossorigin ?</a>
-    </li>
-    <li>
-      <a href="#">What is crossorigin ?</a>
-    </li>
-    <li>
-      <a href="#">What is crossorigin ?</a>
-    </li>
-    <li>
-      <a href="#">What is crossorigin ?</a>
-    </li>
-    <li>
-      <a href="#">What is crossorigin ?</a>
-    </li>
-    <li>
-      <a href="#">What is crossorigin ?</a>
-    </li>
-    <li>
-      <a href="#">What is crossorigin ?</a>
-    </li>
-    <li>
-      <a href="#">What is crossorigin ?</a>
-    </li>
-    <li>
-      <a href="#">What is crossorigin ?</a>
-    </li>
-    <li>
-      <a href="#">What is crossorigin ?</a>
-    </li>
-    <li>
-      <a href="#">What is crossorigin ?</a>
-    </li>
+
 
   </ol>
 
