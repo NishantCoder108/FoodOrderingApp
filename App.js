@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
+import { resList } from "./data";
 /**
  * App Layout
  *   - Header
@@ -33,20 +33,28 @@ const Header = () => {
   );
 };
 
-const ResCard = () => {
+const ResCard = ({
+  name,
+  avgRating,
+  locality,
+  areaName,
+  cloudinaryImageId,
+}) => {
   return (
     <div className="res-card">
       <div className="res-img-card-wrapper">
         <img
           className="res-card-img"
-          src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/np13tsnfrxylkrk1ykm5"
+          src={
+            "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
+            cloudinaryImageId
+          }
         />
       </div>
-      <h3>Haldiram Bhujiawala</h3>
-      <h3>⭐ 4.5</h3>
+      <h3>{name}</h3>
+      <h3>⭐ {avgRating}</h3>
       <h4>
-        Sweets, North Indian, Chinese, South Indian, Fast Food, Snacks, Italian
-        Phulwari Sharif
+        {locality} {areaName}
       </h4>
     </div>
   );
@@ -54,17 +62,15 @@ const ResCard = () => {
 const RestaurantBody = () => {
   return (
     <div className="res-body">
-      <ResCard />
-      <ResCard />
-      <ResCard />
-      <ResCard />
-      <ResCard />
-      <ResCard />
-      <ResCard />
-      <ResCard />
-      <ResCard />
-      <ResCard />
-      <ResCard />
+      {resList?.map((restaurant) => (
+        <ResCard
+          name={restaurant?.info?.name}
+          avgRating={restaurant?.info?.avgRating}
+          locality={restaurant?.info?.locality}
+          areaName={restaurant?.info?.areaName}
+          cloudinaryImageId={restaurant?.info?.cloudinaryImageId}
+        />
+      ))}
     </div>
   );
 };
