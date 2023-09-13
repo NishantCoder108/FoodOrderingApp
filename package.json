@@ -2,8 +2,9 @@
   "name": "learn-react",
   "version": "1.0.0",
   "description": "Learn React by Nishant Kumar",
-  "main": "App.js",
   "scripts": {
+    "start": "npx parcel index.html",
+    "build": "npx parcel build index.html",
     "test": "jest"
   },
   "repository": {
