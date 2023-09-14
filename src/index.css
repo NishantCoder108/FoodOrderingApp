@@ -65,3 +65,19 @@ body {
 .search {
     margin: 9px;
 }
+
+
+.shimmer-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+    margin: 10px;
+}
+
+.shimmerCard {
+    width: 300px;
+    background-color: #3f3b3b2b;
+    height: 400px;
+    border-radius: 1rem;
+}

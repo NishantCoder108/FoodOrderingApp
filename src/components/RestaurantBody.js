@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { resList } from "../utils/data";
 import ResCard from "./ResCard";
 import Search from "./Search";
+import Shimmer from "./Shimmer";
 
 const RestaurantBody = () => {
-  const [restaurantList, setRestaurantList] = useState(resList);
+  const [restaurantList, setRestaurantList] = useState([]);
 
   const filterListFunc = (filterList) => {
     setRestaurantList(filterList);
@@ -28,9 +29,9 @@ const RestaurantBody = () => {
     );
   };
 
-  console.log("Body Rendered");
-
-  return (
+  return restaurantList?.length === 0 ? (
+    <Shimmer />
+  ) : (
     <>
       <Search restaurantList={restaurantList} filterListFunc={filterListFunc} />
       <div className="res-body">
