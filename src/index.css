@@ -81,3 +81,10 @@ body {
     height: 400px;
     border-radius: 1rem;
 }
+
+.filter {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 2px 3px 6px 3.5rem
+}

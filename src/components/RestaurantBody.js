@@ -6,14 +6,15 @@ import Shimmer from "./Shimmer";
 
 const RestaurantBody = () => {
   const [restaurantList, setRestaurantList] = useState([]);
+  const [filteredResList, setFilteredResList] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   const filterListFunc = (filterList) => {
-    setRestaurantList(filterList);
+    setFilteredResList(filterList);
   };
 
   useEffect(() => {
     fetchResList();
-    console.log("UseEffect Called");
   }, []);
 
   const fetchResList = async () => {
@@ -27,15 +28,47 @@ const RestaurantBody = () => {
       dataJson?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants || []
     );
+    setFilteredResList(
+      dataJson?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants || []
+    );
   };
 
   return restaurantList.length === 0 ? (
     <Shimmer />
   ) : (
     <>
-      <Search restaurantList={restaurantList} filterListFunc={filterListFunc} />
+      <div className="filter">
+        <div>
+          <input
+            type="text"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+
+          <button
+            onClick={() => {
+              const searchedResList = restaurantList?.filter((res) =>
+                res.info.name
+                  .toLowerCase()
+                  .includes(searchText.toLowerCase().trim())
+              );
+              setFilteredResList(searchedResList);
+              setSearchText("");
+            }}
+          >
+            Search
+          </button>
+        </div>
+        <Search
+          restaurantList={restaurantList}
+          filterListFunc={filterListFunc}
+        />
+      </div>
       <div className="res-body">
-        {restaurantList?.map((restaurant) => (
+        {filteredResList?.map((restaurant) => (
           <ResCard
             key={restaurant?.info?.id}
             name={restaurant?.info?.name}
