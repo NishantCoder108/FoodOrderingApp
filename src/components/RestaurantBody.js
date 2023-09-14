@@ -25,11 +25,11 @@ const RestaurantBody = () => {
 
     setRestaurantList(
       dataJson?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants
+        ?.restaurants || []
     );
   };
 
-  return restaurantList?.length === 0 ? (
+  return restaurantList.length === 0 ? (
     <Shimmer />
   ) : (
     <>
