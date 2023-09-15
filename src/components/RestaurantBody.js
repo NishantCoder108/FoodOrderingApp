@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { resList } from "../utils/data";
 import ResCard from "./ResCard";
 import Search from "./Search";
 import Shimmer from "./Shimmer";
@@ -31,11 +30,6 @@ const RestaurantBody = () => {
     setFilteredResList(
       dataJson?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants || []
-    );
-
-    console.log(
-      dataJson?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants
     );
   };
 
