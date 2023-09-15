@@ -88,3 +88,17 @@ body {
     align-items: center;
     margin: 2px 3px 6px 3.5rem
 }
+
+
+.errors {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 9px;
+    height: 98vh;
+}
+
+.about {
+    min-height: 80vh;
+}
