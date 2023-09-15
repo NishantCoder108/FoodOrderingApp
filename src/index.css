@@ -102,3 +102,32 @@ body {
 .about {
     min-height: 80vh;
 }
+
+.resMenuList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid grey;
+    flex-wrap: wrap;
+    width: 300px;
+    padding: 1rem;
+    outline: none;
+    border-radius: 1rem;
+
+}
+
+.resMenu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.resName {
+    text-align: center;
+    font-family: sans-serif;
+    text-decoration: blink;
+    text-decoration: underline;
+    color: crimson;
+}
