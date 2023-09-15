@@ -24,11 +24,11 @@ const RestaurantBody = () => {
     const dataJson = await data.json();
 
     setRestaurantList(
-      dataJson?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+      dataJson?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants || []
     );
     setFilteredResList(
-      dataJson?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+      dataJson?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants || []
     );
   };
