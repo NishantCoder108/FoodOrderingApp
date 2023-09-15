@@ -33,10 +33,9 @@ const RestaurantMenu = () => {
       <h1 className="resName">{name}</h1>
       <h2 style={{ textAlign: "center" }}>Restaurant Menu Recommended</h2>
       <div className="resMenu">
-        {itemCards.map((item) => {
-          // resMenuList[0].card.info;
+        {itemCards?.map((item) => {
           return (
-            <div className="resMenuList">
+            <div className="resMenuList" key={item.card.info.id}>
               <h2>
                 {item.card.info.name} - Rs
                 {item.card.info.price / 100 ||
