@@ -14,16 +14,18 @@ class UserClass extends Component {
 
   render() {
     const { name, course } = this.props;
-    const { count } = this.state;
+    const { count, count2 } = this.state;
     return (
       <div className="userClass">
         <h2>{name}</h2>
         <h2>Courses : {course}</h2>
         <h2> Number Of Courses: {count} </h2>
+        <h5>Counting of 9 : {count2} </h5>
         <button
           onClick={() => {
-            this.setState(() => {
-              return (this.state.count = this.state.count + 1);
+            this.setState({
+              count: this.state.count + 1,
+              count2: this.state.count2 + 9,
             });
           }}
         >
