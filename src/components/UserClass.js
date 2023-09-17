@@ -11,15 +11,15 @@ class UserClass extends Component {
       count2: 9,
     };
 
-    console.log("Constructor");
+    console.log(this.props.name + "Child Constructor");
   }
 
   componentDidMount() {
-    console.log("Child Component Did Mount");
+    console.log(this.props.name + "Child Component Did Mount");
   }
 
   render() {
-    console.log("Render");
+    console.log(this.props.name + "child Render");
     const { name, course } = this.props;
     const { count, count2 } = this.state;
     return (

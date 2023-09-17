@@ -20,10 +20,24 @@ class About extends Component {
           <h2> Frontend Expert | React | JavaScript | TypeScript </h2>
         </div>
 
-        <UserClass name="Akshay" course="JavaScript" />
-        {/* <UserClass name="Elon" course="Spaceship" /> */}
+        <UserClass name="First" course="JavaScript" />
+        <UserClass name="Second" course="Spaceship" />
       </div>
     );
   }
 }
 export default About;
+
+/**
+ * Parent Constructor
+ * Parent Render
+ * First Child Constructor
+ * first child Render
+ * Second Child constructor
+ * Second child render
+ * First child componentDidMount
+ * Second child componentDidMount
+ * Parent child componentDidmount
+ *
+ * it have two phase , First Render Phase ,so it first render the component and Second phase is Commit Phase , in second phase , it call to ComponentDidMount , where we can api call
+ */
