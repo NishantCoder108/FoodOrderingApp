@@ -42,9 +42,10 @@ const RestaurantBody = () => {
     <Shimmer />
   ) : (
     <>
-      <div className="filter">
+      <div className="flex mb-9 ml-5">
         <div>
           <input
+            className=" border border-black rounded-sm"
             type="text"
             value={searchText}
             onChange={(e) => {
@@ -53,6 +54,7 @@ const RestaurantBody = () => {
           />
 
           <button
+            className="py-1 px-3 ml-3 bg-blue-400 rounded-sm"
             onClick={() => {
               const searchedResList = restaurantList?.filter((res) =>
                 res.info.name
@@ -71,11 +73,12 @@ const RestaurantBody = () => {
           filterListFunc={filterListFunc}
         />
       </div>
-      <div className="res-body">
+      <div className="flex flex-wrap justify-evenly">
         {filteredResList?.map((restaurant) => (
           <Link
             key={restaurant?.info?.id}
             to={"/restaurant/" + restaurant?.info?.id}
+            className=" border border-slate-300 m-1 p-1 hover:border-slate-600 rounded-sm"
           >
             <ResCard
               name={restaurant?.info?.name}

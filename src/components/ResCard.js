@@ -8,13 +8,16 @@ const ResCard = ({
   cloudinaryImageId,
 }) => {
   return (
-    <div className="res-card">
+    <div className="w-[215px] ">
       <div className="res-img-card-wrapper">
-        <img className="res-card-img" src={CDN_IMG_URL + cloudinaryImageId} />
+        <img
+          className="w-[215px] max-h-40"
+          src={CDN_IMG_URL + cloudinaryImageId}
+        />
       </div>
-      <h3>{name}</h3>
-      <h3>⭐ {avgRating}</h3>
-      <h4>
+      <h3 className="font-bold">{name}</h3>
+      <h3>⭐ {avgRating} stars</h3>
+      <h4 className="max-w-[200px]">
         {locality} {areaName}
       </h4>
     </div>
