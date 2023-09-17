@@ -2,37 +2,38 @@ import { Component, useEffect, useState } from "react";
 import UserClass from "./UserClass";
 
 const About = () => {
-  const [count] = useState(0);
+  const [userData, setUserData] = useState({});
 
-  const timer = setInterval(() => {
-    console.log("count");
-  }, 1000);
-
-  const fetchGithubApi = async () => {
+  const fetchGithubUser = async () => {
     const data = await fetch("https://api.github.com/users/NishantCoder108");
     const dataJson = await data.json();
-
+    setUserData(dataJson);
     console.log(dataJson);
   };
 
   useEffect(() => {
-    /**
-     * Component Did Mount
-     * Component Did Update
-     * Component Will Unmount : when we leaving page
-     */
-
-    console.log("UseEffect");
+    const fetchGithubUserApi = fetchGithubUser();
+    console.log({ fetchGithubUserApi });
     return () => {
-      clearInterval(timer);
+      fetchGithubUserApi?.cancel();
     };
-  }, [count]);
-  return (
-    <>
-      <div>
+  }, []);
+
+  if (Object.keys(userData).length === 0)
+    return (
+      <>
         <h2>Nishant Kumar</h2>
         <h2>Web Engineer</h2>
-        <h2> Frontend Expert | React | JavaScript | TypeScript </h2>
+      </>
+    );
+  const { name, avatar_url, location, bio, blog } = userData;
+  return (
+    <>
+      <div className="about">
+        <img src={avatar_url} alt="logo" />
+        <h2>{name}</h2>
+        <h2>{bio}</h2>
+        <h2> {location} </h2>
       </div>
     </>
   );
