@@ -3,8 +3,10 @@ import ResCard from "./ResCard";
 import Search from "./Search";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const RestaurantBody = () => {
+  const isOnline = useOnlineStatus();
   const [restaurantList, setRestaurantList] = useState([]);
   const [filteredResList, setFilteredResList] = useState([]);
   const [searchText, setSearchText] = useState("");
@@ -33,6 +35,8 @@ const RestaurantBody = () => {
         ?.restaurants || []
     );
   };
+
+  if (!isOnline) return <h1>Oops!!, You are looking ,You are OFFLINE 🔴 </h1>;
 
   return restaurantList.length === 0 ? (
     <Shimmer />
