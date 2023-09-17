@@ -22,8 +22,7 @@ const About = () => {
   if (Object.keys(userData).length === 0)
     return (
       <>
-        <h2>Nishant Kumar</h2>
-        <h2>Web Engineer</h2>
+        <h2>Loading ...</h2>
       </>
     );
   const { name, avatar_url, location, bio, blog } = userData;
