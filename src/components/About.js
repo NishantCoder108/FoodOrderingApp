@@ -15,7 +15,7 @@ const About = () => {
     const fetchGithubUserApi = fetchGithubUser();
     console.log({ fetchGithubUserApi });
     return () => {
-      fetchGithubUserApi?.cancel();
+      console.log("Returning...");
     };
   }, []);
 
