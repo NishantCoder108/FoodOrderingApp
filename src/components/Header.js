@@ -5,26 +5,26 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 const Header = () => {
   const isOnline = useOnlineStatus();
   return (
-    <div className="nav">
-      <div>
-        <img alt="logo" className="logo" src={LOGO_URL} />
+    <div className="flex justify-between  bg-slate-100">
+      <div className="">
+        <img className="w-24" alt="logo" src={LOGO_URL} />
       </div>
-      <div className="nav-menu">
-        <ul>
-          <li>Online Status : {isOnline ? "✅" : "🔴"}</li>
-          <li>
+      <div className="flex items-center ">
+        <ul className="flex ">
+          <li className="px-6">Online Status : {isOnline ? "✅" : "🔴"}</li>
+          <li className="px-6">
             <Link to="/"> Home </Link>{" "}
           </li>
-          <li>
+          <li className="px-6">
             <Link to="/about"> About</Link>
           </li>
-          <li>
+          <li className="px-6">
             <Link to="/contact"> Contact Us</Link>
           </li>
-          <li>
+          <li className="px-6">
             <Link to="/cart"> Cart</Link>
           </li>
-          <li>
+          <li className="px-6">
             <Link to="/login"> Login</Link>
           </li>
         </ul>
