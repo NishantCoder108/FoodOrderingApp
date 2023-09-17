@@ -21,7 +21,6 @@ class About extends Component {
         </div>
 
         <UserClass name="First" course="JavaScript" />
-        <UserClass name="Second" course="Spaceship" />
       </div>
     );
   }

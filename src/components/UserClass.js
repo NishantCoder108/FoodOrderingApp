@@ -16,10 +16,25 @@ class UserClass extends Component {
 
   componentDidMount() {
     console.log(this.props.name + "Child Component Did Mount");
+
+    this.timer = setInterval(() => {
+      console.log("count");
+    }, 1000);
   }
 
+  componentDidUpdate() {
+    // console.log("Component Did Update");
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer);
+
+    console.log("Component Will Unmount");
+    // when go to current page to other page , then it will call . it is used for cleanup code.
+  }
   render() {
-    console.log(this.props.name + "child Render");
+    console.log(this.state.count);
+    // console.log(this.props.name + "child Render");
     const { name, course } = this.props;
     const { count, count2 } = this.state;
     return (
