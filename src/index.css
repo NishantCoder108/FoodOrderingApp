@@ -131,3 +131,10 @@ body {
     text-decoration: underline;
     color: crimson;
 }
+
+.about {
+    display: flex;
+    gap: 10px;
+
+    justify-content: space-evenly;
+}
