@@ -10,9 +10,16 @@ class UserClass extends Component {
       count: 0,
       count2: 9,
     };
+
+    console.log("Constructor");
+  }
+
+  componentDidMount() {
+    console.log("Child Component Did Mount");
   }
 
   render() {
+    console.log("Render");
     const { name, course } = this.props;
     const { count, count2 } = this.state;
     return (
@@ -25,11 +32,10 @@ class UserClass extends Component {
           onClick={() => {
             this.setState({
               count: this.state.count + 1,
-              count2: this.state.count2 + 9,
             });
           }}
         >
-          Increase Count
+          Increase
         </button>
       </div>
     );

@@ -10,6 +10,7 @@ const About = () => {
       </div>
 
       <UserClass name="Akshay" course="JavaScript" />
+      <UserClass name="Elon" course="Spaceship" />
     </div>
   );
 };
