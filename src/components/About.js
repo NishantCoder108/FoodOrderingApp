@@ -1,42 +1,40 @@
-import { Component } from "react";
+import { Component, useEffect, useState } from "react";
 import UserClass from "./UserClass";
 
-class About extends Component {
-  constructor(props) {
-    super(props);
-    console.log("Parent Constructor");
-  }
+const About = () => {
+  const [count] = useState(0);
 
-  componentDidMount() {
-    console.log("Parent Component Did Mount");
-  }
-  render() {
-    console.log("Parent Render");
-    return (
-      <div className="about">
-        <div>
-          <h2>Nishant Kumar</h2>
-          <h2>Web Engineer</h2>
-          <h2> Frontend Expert | React | JavaScript | TypeScript </h2>
-        </div>
+  const timer = setInterval(() => {
+    console.log("count");
+  }, 1000);
 
-        <UserClass name="First" course="JavaScript" />
+  const fetchGithubApi = async () => {
+    const data = await fetch("https://api.github.com/users/NishantCoder108");
+    const dataJson = await data.json();
+
+    console.log(dataJson);
+  };
+
+  useEffect(() => {
+    /**
+     * Component Did Mount
+     * Component Did Update
+     * Component Will Unmount : when we leaving page
+     */
+
+    console.log("UseEffect");
+    return () => {
+      clearInterval(timer);
+    };
+  }, [count]);
+  return (
+    <>
+      <div>
+        <h2>Nishant Kumar</h2>
+        <h2>Web Engineer</h2>
+        <h2> Frontend Expert | React | JavaScript | TypeScript </h2>
       </div>
-    );
-  }
-}
+    </>
+  );
+};
 export default About;
-
-/**
- * Parent Constructor
- * Parent Render
- * First Child Constructor
- * first child Render
- * Second Child constructor
- * Second child render
- * First child componentDidMount
- * Second child componentDidMount
- * Parent child componentDidmount
- *
- * it have two phase , First Render Phase ,so it first render the component and Second phase is Commit Phase , in second phase , it call to ComponentDidMount , where we can api call
- */
