@@ -16,7 +16,7 @@ const RestaurantItemCard = ({ filterListItem = [] }) => {
             <p className="py-3">{item.card.info.description} </p>
           </div>
 
-          <div className="">
+          <div className="w-3/12">
             <img className="w-28" src={CDN_IMG_URL + item.card.info.imageId} />
           </div>
         </div>
