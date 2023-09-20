@@ -9,14 +9,17 @@ import ContactUs from "./components/ContactUs";
 import Login from "./components/Login";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
+import UserContext from "./utils/userContext";
 
 const About = lazy(() => import("./components/About"));
 const AppLayout = () => {
   return (
     <div className="app">
-      <Header />
-      <Outlet />
-      <Footer />
+      <UserContext.Provider value={{ name: "Elon Musk" }}>
+        <Header />
+        <Outlet />
+        <Footer />
+      </UserContext.Provider>
     </div>
   );
 };
