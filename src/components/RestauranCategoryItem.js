@@ -1,19 +1,11 @@
 import { useState } from "react";
 import RestaurantItemCard from "./RestaurantItemCard";
 
-const RestaurantCatergoryItem = ({ data, hideOther }) => {
-  const [showItems, setShowItems] = useState(false);
-
-  const handleToggle = () => {
-    console.log("clicked");
-    setShowItems(!showItems);
-  };
+const RestaurantCatergoryItem = ({ data, showItems, handleToggle }) => {
   return (
     <div>
       <div
-        onClick={() => {
-          handleToggle();
-        }}
+        onClick={handleToggle}
         className="justify-between bg-gray-50 p-3 rounded-sm flex cursor-pointer shadow-lg"
       >
         <span className="font-bold">
