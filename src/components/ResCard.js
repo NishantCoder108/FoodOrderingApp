@@ -1,14 +1,26 @@
 import { CDN_IMG_URL } from "../utils/constants";
 
+export const withExtraFeature = (component) => {
+  return () => {
+    return <></>;
+  };
+};
+
 const ResCard = ({
   name,
   avgRating,
   locality,
   areaName,
   cloudinaryImageId,
+  veg,
 }) => {
   return (
-    <div className="w-[215px] ">
+    <div className="w-[215px] relative ">
+      {veg && (
+        <span className="absolute top-0 font-black bg-white rounded-br-md p-1">
+          Promoted
+        </span>
+      )}
       <div className="res-img-card-wrapper">
         <img
           className="w-[215px] max-h-40"

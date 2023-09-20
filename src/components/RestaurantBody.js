@@ -36,6 +36,7 @@ const RestaurantBody = () => {
     );
   };
 
+  console.log(restaurantList);
   if (!isOnline) return <h1>Oops!!, You are looking ,You are OFFLINE 🔴 </h1>;
 
   return restaurantList.length === 0 ? (
@@ -86,6 +87,7 @@ const RestaurantBody = () => {
               locality={restaurant?.info?.locality}
               areaName={restaurant?.info?.areaName}
               cloudinaryImageId={restaurant?.info?.cloudinaryImageId}
+              veg={restaurant?.info?.veg}
             />{" "}
           </Link>
         ))}
