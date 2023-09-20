@@ -1,10 +1,13 @@
 import { CDN_IMG_URL } from "../utils/constants";
 
-const RestaurantItemCard = ({ filterListItem = [], showMenu = false }) => {
+const RestaurantItemCard = ({ filterListItem = {}, showMenu = false }) => {
+  console.log({ filterListItem });
+  const { itemCards = [] } = filterListItem?.card?.card;
+
   return (
     showMenu && (
       <div className="bg-slate-300">
-        {filterListItem?.map((item) => (
+        {itemCards?.map((item) => (
           <div key={item.card.info.id} className="flex justify-between  py-3">
             <div className="flex flex-col p-2  w-10/12 ">
               <span className="font-semibold">
@@ -17,7 +20,11 @@ const RestaurantItemCard = ({ filterListItem = [], showMenu = false }) => {
             </div>
 
             <div className="w-2/12">
-              <img className="" src={CDN_IMG_URL + item.card.info.imageId} />
+              {item.card.info.imageId ? (
+                <img className="" src={CDN_IMG_URL + item.card.info.imageId} />
+              ) : (
+                <div className="bg-neutral-400 w-full h-full"> </div>
+              )}
             </div>
           </div>
         ))}

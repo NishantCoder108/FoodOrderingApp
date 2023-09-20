@@ -20,6 +20,7 @@ const RestaurantMenu = () => {
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
 
+  console.log({ filterItemCard });
   return (
     <>
       <h1 className="text-center font-bold text-xl p-3">{name}</h1>
@@ -38,8 +39,8 @@ const RestaurantMenu = () => {
               </div>
               {
                 <RestaurantItemCard
-                  showMenu={index === showIdx ? true : false}
-                  filterListItem={item.card.card?.itemCards || []}
+                  showMenu={index === showIdx}
+                  filterListItem={item}
                 />
               }
             </div>
