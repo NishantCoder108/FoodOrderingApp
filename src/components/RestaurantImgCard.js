@@ -7,7 +7,9 @@ const RestaurantImgCard = ({ cardItems }) => {
       {imageId ? (
         <img className="" src={CDN_IMG_URL + imageId} />
       ) : (
-        <div className="bg-neutral-400 w-full h-full"> </div>
+        <div className="bg-neutral-400 w-full h-full text-center flex align-middle">
+          No Image{" "}
+        </div>
       )}
     </div>
   );
@@ -22,7 +24,7 @@ export const withInStockRestaurantImgCard = (InStockComponent) => {
     return (
       <div>
         <span className="text-[#6907079f]  font-semibold rounded-md p-1 text-center absolute">
-          Left In Stock : {inStock}{" "}
+          Left In Stock : {inStock}
         </span>
 
         <InStockComponent {...props} />
