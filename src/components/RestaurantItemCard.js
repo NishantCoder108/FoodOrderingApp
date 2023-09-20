@@ -1,10 +1,8 @@
 import { CDN_IMG_URL } from "../utils/constants";
 
-const RestaurantItemCard = ({ filterListItem = [], hideMenu = false }) => {
-  //   console.log(filterListItem[0]);
-
+const RestaurantItemCard = ({ filterListItem = [], showMenu = false }) => {
   return (
-    !hideMenu && (
+    showMenu && (
       <div className="bg-slate-300">
         {filterListItem?.map((item) => (
           <div key={item.card.info.id} className="flex justify-between  py-3">
