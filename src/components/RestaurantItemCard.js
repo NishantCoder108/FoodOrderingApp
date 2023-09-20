@@ -1,9 +1,11 @@
-import RestaurantImgCard from "./RestaurantImgCard";
+import RestaurantImgCard, {
+  withInStockRestaurantImgCard,
+} from "./RestaurantImgCard";
 
 const RestaurantItemCard = ({ filterListItem = {}, showMenu = false }) => {
   const { itemCards = [] } = filterListItem?.card?.card;
   console.log({ itemCards });
-
+  const LeftInStockCard = withInStockRestaurantImgCard(RestaurantImgCard);
   return (
     showMenu && (
       <div className="bg-slate-300">
@@ -19,7 +21,14 @@ const RestaurantItemCard = ({ filterListItem = {}, showMenu = false }) => {
               <p className="py-3">{item.card.info.description} </p>
             </div>
 
-            <RestaurantImgCard cardItems={item} />
+            <div className="w-2/12 relative">
+              {(item.card.info.price / 100 ||
+                item.card.info.defaultPrice / 100) > 150 ? (
+                <LeftInStockCard cardItems={item} />
+              ) : (
+                <RestaurantImgCard cardItems={item} />
+              )}
+            </div>
           </div>
         ))}
       </div>
@@ -27,15 +36,4 @@ const RestaurantItemCard = ({ filterListItem = {}, showMenu = false }) => {
   );
 };
 
-export const withInStockRestaurantItemCard = (InStockComponent) => {
-  return (props) => {
-    return (
-      <div>
-        <h1>In Stock </h1>
-
-        <InStockComponent {...props} />
-      </div>
-    );
-  };
-};
 export default RestaurantItemCard;
