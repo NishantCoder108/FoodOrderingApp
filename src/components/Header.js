@@ -7,9 +7,7 @@ import userContext from "../utils/userContext";
 const Header = () => {
   const isOnline = useOnlineStatus();
   const userLogin = useContext(userContext);
-  // const userLogin = {
-  //   name: "Nishant",
-  // };
+
   return (
     <div className="flex justify-between  bg-slate-100">
       <div className="">
@@ -30,7 +28,7 @@ const Header = () => {
           <li className="px-6">
             <Link to="/cart"> Cart</Link>
           </li>
-          <li className="px-6 font-bold">{userLogin.name}</li>
+          <li className="px-6 font-bold">{userLogin.loggedInUser}</li>
           <li className="px-6">
             <Link to="#login"> Logout</Link>
           </li>

@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className="footer">
+    <div className="text-center bg-black text-white p-6 mt-4">
       <h5>Copyright ©️ 2023 - 2024</h5>
     </div>
   );

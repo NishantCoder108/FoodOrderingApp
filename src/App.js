@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import RestaurantBody from "./components/RestaurantBody";
@@ -12,10 +12,14 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./utils/userContext";
 
 const About = lazy(() => import("./components/About"));
+
 const AppLayout = () => {
+  const [loggedInUser, setLoggedInUser] = useState("Nishant Kumar");
   return (
     <div className="app">
-      <UserContext.Provider value={{ name: "Elon Musk" }}>
+      <UserContext.Provider
+        value={{ loggedInUser: loggedInUser, setLoggedInUser }}
+      >
         <Header />
         <Outlet />
         <Footer />

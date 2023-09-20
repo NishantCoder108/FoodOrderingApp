@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ResCard, { WithPromotedCard, withVegCard } from "./ResCard";
 import Search from "./Search";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/userContext";
 
 const RestaurantBody = () => {
   const isOnline = useOnlineStatus();
@@ -12,6 +13,8 @@ const RestaurantBody = () => {
   const [searchText, setSearchText] = useState("");
 
   const VegResCard = withVegCard(ResCard);
+  const { loggedInUser, setLoggedInUser } = useContext(UserContext);
+
   const filterListFunc = (filterList) => {
     setFilteredResList(filterList);
   };
@@ -37,7 +40,7 @@ const RestaurantBody = () => {
     );
   };
 
-  console.log(restaurantList);
+  // console.log(restaurantList);
   if (!isOnline) return <h1>Oops!!, You are looking ,You are OFFLINE 🔴 </h1>;
 
   return restaurantList.length === 0 ? (
@@ -73,6 +76,13 @@ const RestaurantBody = () => {
         <Search
           restaurantList={restaurantList}
           filterListFunc={filterListFunc}
+        />
+
+        <input
+          type="text"
+          value={loggedInUser}
+          onChange={(e) => setLoggedInUser(e.target.value)}
+          className="border border-black px-2 ml-4"
         />
       </div>
       <div className="flex flex-wrap justify-evenly">

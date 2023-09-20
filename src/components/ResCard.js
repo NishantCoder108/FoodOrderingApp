@@ -1,7 +1,7 @@
 import { CDN_IMG_URL } from "../utils/constants";
 
 const ResCard = ({ resData }) => {
-  console.log(resData);
+  // console.log(resData);
   const { name, avgRating, locality, areaName, cloudinaryImageId } =
     resData?.info;
 
