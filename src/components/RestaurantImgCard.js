@@ -7,19 +7,15 @@ const RestaurantImgCard = ({ cardItems }) => {
       {imageId ? (
         <img className="" src={CDN_IMG_URL + imageId} />
       ) : (
-        <div className="bg-neutral-400 w-full h-full text-center flex align-middle">
-          No Image{" "}
-        </div>
+        <div className="bg-[#fff8dc] rounded-sm  w-31 h-28  hover:bg-slate-200"></div>
       )}
     </div>
   );
 };
 
-export default RestaurantImgCard;
-
 export const withInStockRestaurantImgCard = (InStockComponent) => {
   return (props) => {
-    console.log("withInStockResImgCa" + { props });
+    console.log("withInStockResImgCa", props);
     const { inStock } = props.cardItems?.card?.info;
     return (
       <div>
@@ -32,3 +28,4 @@ export const withInStockRestaurantImgCard = (InStockComponent) => {
     );
   };
 };
+export default RestaurantImgCard;
