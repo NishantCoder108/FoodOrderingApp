@@ -32,6 +32,7 @@ const RestaurantMenu = () => {
         <div className="w-6/12 flex gap-4 flex-col ">
           {filterItemCard?.map((item, index) => (
             <RestaurantCatergoryItem
+              // hideOther={index === 1 ? true : false}
               key={item.card.card.title}
               data={item?.card?.card}
             />

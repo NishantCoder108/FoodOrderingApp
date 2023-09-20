@@ -1,7 +1,7 @@
 import { useState } from "react";
 import RestaurantItemCard from "./RestaurantItemCard";
 
-const RestaurantCatergoryItem = ({ data }) => {
+const RestaurantCatergoryItem = ({ data, hideOther }) => {
   const [showItems, setShowItems] = useState(false);
 
   const handleToggle = () => {
