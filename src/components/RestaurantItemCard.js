@@ -1,8 +1,8 @@
-import { CDN_IMG_URL } from "../utils/constants";
+import RestaurantImgCard from "./RestaurantImgCard";
 
 const RestaurantItemCard = ({ filterListItem = {}, showMenu = false }) => {
-  console.log({ filterListItem });
   const { itemCards = [] } = filterListItem?.card?.card;
+  console.log({ itemCards });
 
   return (
     showMenu && (
@@ -19,13 +19,7 @@ const RestaurantItemCard = ({ filterListItem = {}, showMenu = false }) => {
               <p className="py-3">{item.card.info.description} </p>
             </div>
 
-            <div className="w-2/12">
-              {item.card.info.imageId ? (
-                <img className="" src={CDN_IMG_URL + item.card.info.imageId} />
-              ) : (
-                <div className="bg-neutral-400 w-full h-full"> </div>
-              )}
-            </div>
+            <RestaurantImgCard cardItems={item} />
           </div>
         ))}
       </div>
@@ -33,4 +27,15 @@ const RestaurantItemCard = ({ filterListItem = {}, showMenu = false }) => {
   );
 };
 
+export const withInStockRestaurantItemCard = (InStockComponent) => {
+  return (props) => {
+    return (
+      <div>
+        <h1>In Stock </h1>
+
+        <InStockComponent {...props} />
+      </div>
+    );
+  };
+};
 export default RestaurantItemCard;
