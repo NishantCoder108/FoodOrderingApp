@@ -34,7 +34,9 @@ const RestaurantMenu = () => {
                 }}
                 className="justify-between bg-slate-300 p-2 rounded-sm flex cursor-pointer"
               >
-                <span className="font-bold"> {item.card.card.title} </span>
+                <span className="font-bold">
+                  {item.card.card.title} ({item.card.card.itemCards.length})
+                </span>
                 <span>🔽</span>
               </div>
               {
