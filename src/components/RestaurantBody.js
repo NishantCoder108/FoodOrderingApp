@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ResCard, { WithPromotedCard } from "./ResCard";
+import ResCard, { WithPromotedCard, withVegCard } from "./ResCard";
 import Search from "./Search";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -11,6 +11,7 @@ const RestaurantBody = () => {
   const [filteredResList, setFilteredResList] = useState([]);
   const [searchText, setSearchText] = useState("");
 
+  const VegResCard = withVegCard(ResCard);
   const filterListFunc = (filterList) => {
     setFilteredResList(filterList);
   };
@@ -81,26 +82,10 @@ const RestaurantBody = () => {
             to={"/restaurant/" + restaurant?.info?.id}
             className=" border border-slate-300 m-1 p-1 hover:border-slate-600 rounded-sm"
           >
-            {!restaurant?.info?.veg ? (
-              <ResCard
-                name={restaurant?.info?.name}
-                avgRating={restaurant?.info?.avgRating}
-                locality={restaurant?.info?.locality}
-                areaName={restaurant?.info?.areaName}
-                cloudinaryImageId={restaurant?.info?.cloudinaryImageId}
-              />
+            {restaurant?.info?.veg ? (
+              <VegResCard resData={restaurant} />
             ) : (
-              <WithPromotedCard
-              // component={
-              //   <ResCard
-              //     name={restaurant?.info?.name}
-              //     avgRating={restaurant?.info?.avgRating}
-              //     locality={restaurant?.info?.locality}
-              //     areaName={restaurant?.info?.areaName}
-              //     cloudinaryImageId={restaurant?.info?.cloudinaryImageId}
-              //   />
-              // }
-              />
+              <ResCard resData={restaurant} />
             )}
           </Link>
         ))}
@@ -108,5 +93,9 @@ const RestaurantBody = () => {
     </>
   );
 };
+
+/***
+ * veg
+ */
 
 export default RestaurantBody;

@@ -1,20 +1,12 @@
 import { CDN_IMG_URL } from "../utils/constants";
 
-const ResCard = ({
-  name,
-  avgRating,
-  locality,
-  areaName,
-  cloudinaryImageId,
-  veg,
-}) => {
+const ResCard = ({ resData }) => {
+  console.log(resData);
+  const { name, avgRating, locality, areaName, cloudinaryImageId } =
+    resData?.info;
+
   return (
-    <div className="w-[215px] relative ">
-      {veg && (
-        <span className="absolute top-0 font-black bg-white rounded-br-md p-1">
-          Promoted
-        </span>
-      )}
+    <div className="w-[215px] ">
       <div className="res-img-card-wrapper">
         <img
           className="w-[215px] max-h-40"
@@ -30,15 +22,14 @@ const ResCard = ({
   );
 };
 
-export const WithPromotedCard = (component) => {
-  return () => {
+export const withVegCard = (ResCard) => {
+  return (props) => {
     return (
-      <div className="w-[215px] relative ">
-        <span className="absolute top-0 font-black bg-white rounded-br-md p-1">
-          Promoted
+      <div className="relative">
+        <span className="absolute top-0 font-black bg-green-300 rounded-br-sm p-1">
+          VEG
         </span>
-
-        {/* {<ResCard {...component} />} */}
+        <ResCard {...props} />
       </div>
     );
   };
