@@ -14,7 +14,7 @@ const RestaurantCatergoryItem = ({ data }) => {
         onClick={() => {
           handleToggle();
         }}
-        className="justify-between bg-slate-300 p-2 rounded-sm flex cursor-pointer"
+        className="justify-between bg-gray-50 p-3 rounded-sm flex cursor-pointer shadow-lg"
       >
         <span className="font-bold">
           {data.title} ({data.itemCards.length})
