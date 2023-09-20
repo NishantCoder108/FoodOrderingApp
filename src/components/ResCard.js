@@ -1,11 +1,5 @@
 import { CDN_IMG_URL } from "../utils/constants";
 
-export const withExtraFeature = (component) => {
-  return () => {
-    return <></>;
-  };
-};
-
 const ResCard = ({
   name,
   avgRating,
@@ -34,6 +28,20 @@ const ResCard = ({
       </h4>
     </div>
   );
+};
+
+export const WithPromotedCard = (component) => {
+  return () => {
+    return (
+      <div className="w-[215px] relative ">
+        <span className="absolute top-0 font-black bg-white rounded-br-md p-1">
+          Promoted
+        </span>
+
+        {/* {<ResCard {...component} />} */}
+      </div>
+    );
+  };
 };
 
 export default ResCard;

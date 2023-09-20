@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ResCard from "./ResCard";
+import ResCard, { WithPromotedCard } from "./ResCard";
 import Search from "./Search";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -81,14 +81,27 @@ const RestaurantBody = () => {
             to={"/restaurant/" + restaurant?.info?.id}
             className=" border border-slate-300 m-1 p-1 hover:border-slate-600 rounded-sm"
           >
-            <ResCard
-              name={restaurant?.info?.name}
-              avgRating={restaurant?.info?.avgRating}
-              locality={restaurant?.info?.locality}
-              areaName={restaurant?.info?.areaName}
-              cloudinaryImageId={restaurant?.info?.cloudinaryImageId}
-              veg={restaurant?.info?.veg}
-            />{" "}
+            {!restaurant?.info?.veg ? (
+              <ResCard
+                name={restaurant?.info?.name}
+                avgRating={restaurant?.info?.avgRating}
+                locality={restaurant?.info?.locality}
+                areaName={restaurant?.info?.areaName}
+                cloudinaryImageId={restaurant?.info?.cloudinaryImageId}
+              />
+            ) : (
+              <WithPromotedCard
+              // component={
+              //   <ResCard
+              //     name={restaurant?.info?.name}
+              //     avgRating={restaurant?.info?.avgRating}
+              //     locality={restaurant?.info?.locality}
+              //     areaName={restaurant?.info?.areaName}
+              //     cloudinaryImageId={restaurant?.info?.cloudinaryImageId}
+              //   />
+              // }
+              />
+            )}
           </Link>
         ))}
       </div>{" "}
