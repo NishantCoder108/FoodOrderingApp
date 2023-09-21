@@ -21,11 +21,11 @@ const AppLayout = () => {
   return (
     <div className="app">
       <Provider store={store}>
-        <UserContext.Provider
+        {/* <UserContext.Provider
           value={{ loggedInUser: loggedInUser, setLoggedInUser }}
-        >
-          <Header />
-        </UserContext.Provider>
+        > */}
+        <Header />
+        {/* </UserContext.Provider> */}
         <Outlet />
         <Footer />
       </Provider>
