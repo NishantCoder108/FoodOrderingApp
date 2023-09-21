@@ -1,7 +1,27 @@
 <a href="readme-top"></a>
 
+## Web Page Look Like :
+
+<img src= "image/first.png">
+
+<img src= "image/second.png">
+
 # You Must To Know :
 
+### Redux Toolkit :
+
+- For Creating Store
+  - `step1 : Install Redux toolkit and react-redux
+`
+  - `step2 : Buid store ,with help of Redux toolkit`
+  - `step3 : Connect store with app by react-redux`
+  - `step4 : Make slice`
+  - `step4 : Subscribing to the store, we use "useSelector"`
+  - `step4 : dispatch to the store, "useDispatch"`
+
+### Basic Context in Details
+
+<details>
   <ol>
     <li>
       <a href="#what-is-cdn">What is CDN ?</a>
@@ -28,13 +48,14 @@
       <a href="#what-is-tree-shaking">What is Tree Shaking ?</a>
     </li>
 
-
   </ol>
+</details>
 
+<br>
+<br>
   <pre>
 
-
-  Getting Started : To New Journey in ...
+Getting Started : To New Journey in ...
 
   </pre>
 
