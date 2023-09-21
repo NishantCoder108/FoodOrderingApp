@@ -82,12 +82,12 @@ const RestaurantBody = () => {
           filterListFunc={filterListFunc}
         />
 
-        <input
+        {/* <input
           type="text"
           value={loggedInUser}
           onChange={(e) => dispatch(updateUser(e.target.value))}
           className="border border-black px-2 ml-4"
-        />
+        /> */}
       </div>
       <div className="flex flex-wrap justify-evenly">
         {filteredResList?.map((restaurant) => (
