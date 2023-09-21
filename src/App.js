@@ -24,9 +24,9 @@ const AppLayout = () => {
           value={{ loggedInUser: loggedInUser, setLoggedInUser }}
         >
           <Header />
-          <Outlet />
-          <Footer />
         </UserContext.Provider>
+        <Outlet />
+        <Footer />
       </Provider>
     </div>
   );
