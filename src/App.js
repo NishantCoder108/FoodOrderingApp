@@ -10,6 +10,8 @@ import Login from "./components/Login";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./utils/userContext";
+import { Provider } from "react-redux";
+import store from "./app/store";
 
 const About = lazy(() => import("./components/About"));
 
@@ -17,13 +19,15 @@ const AppLayout = () => {
   const [loggedInUser, setLoggedInUser] = useState("Nishant Kumar");
   return (
     <div className="app">
-      <UserContext.Provider
-        value={{ loggedInUser: loggedInUser, setLoggedInUser }}
-      >
-        <Header />
-        <Outlet />
-        <Footer />
-      </UserContext.Provider>
+      <Provider store={store}>
+        <UserContext.Provider
+          value={{ loggedInUser: loggedInUser, setLoggedInUser }}
+        >
+          <Header />
+          <Outlet />
+          <Footer />
+        </UserContext.Provider>
+      </Provider>
     </div>
   );
 };
