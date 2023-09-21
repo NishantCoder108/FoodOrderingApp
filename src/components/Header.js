@@ -9,7 +9,9 @@ const Header = () => {
   const isOnline = useOnlineStatus();
   const userLogin = useContext(userContext);
   const items = useSelector((store) => store.cartItems.items);
+  const loggedInUser = useSelector((store) => store.loggedInUser.userName);
   console.log(items);
+
   return (
     <div className="flex justify-between  bg-slate-100">
       <div className="">
@@ -30,7 +32,7 @@ const Header = () => {
           <li className="px-6 font-bold">
             <Link to="/cart"> Cart ({items.length}) - items </Link>
           </li>
-          <li className="px-6 font-bold">{userLogin.loggedInUser}</li>
+          <li className="px-6 font-bold">{loggedInUser}</li>
           <li className="px-6">
             <Link to="#login"> Logout</Link>
           </li>

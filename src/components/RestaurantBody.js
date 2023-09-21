@@ -5,15 +5,19 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/userContext";
+import { useDispatch, useSelector } from "react-redux";
+import { updateUser } from "../app/UserSlice";
 
 const RestaurantBody = () => {
   const isOnline = useOnlineStatus();
   const [restaurantList, setRestaurantList] = useState([]);
   const [filteredResList, setFilteredResList] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const dispatch = useDispatch();
 
+  const loggedInUser = useSelector((state) => state.loggedInUser.userName);
   const VegResCard = withVegCard(ResCard);
-  const { loggedInUser, setLoggedInUser } = useContext(UserContext);
+  // const { loggedInUser, setLoggedInUser } = useContext(UserContext);
 
   const filterListFunc = (filterList) => {
     setFilteredResList(filterList);
@@ -81,7 +85,7 @@ const RestaurantBody = () => {
         <input
           type="text"
           value={loggedInUser}
-          onChange={(e) => setLoggedInUser(e.target.value)}
+          onChange={(e) => dispatch(updateUser(e.target.value))}
           className="border border-black px-2 ml-4"
         />
       </div>
