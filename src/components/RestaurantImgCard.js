@@ -9,6 +9,15 @@ const RestaurantImgCard = ({ cardItems }) => {
       ) : (
         <div className="bg-[#fff8dc] rounded-sm  w-31 h-28  hover:bg-slate-200"></div>
       )}
+
+      <div className="bottom-[1.5rem] relative">
+        <button className="absolute left-[25%]   font-extrabold border  rounded-sm px-2 bg-white text-black">
+          +
+        </button>
+        <button className="absolute right-[25%]  font-extrabold border  rounded-sm px-2 bg-white text-black">
+          -
+        </button>{" "}
+      </div>
     </div>
   );
 };
