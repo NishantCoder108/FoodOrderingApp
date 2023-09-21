@@ -6,7 +6,7 @@ const RestaurantItemCard = ({ filterListItem = [] }) => {
   console.log({ filterListItem });
   const LeftInStockCard = withInStockRestaurantImgCard(RestaurantImgCard);
   return (
-    <div className="bg-slate-300">
+    <div className="bg-slate-300 mb-80">
       {filterListItem?.map((item) => (
         <div
           key={item.card.info.id + Math.random()}
