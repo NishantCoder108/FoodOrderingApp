@@ -7,7 +7,7 @@ const RestaurantImgCard = ({ cardItems }) => {
   const dispatch = useDispatch();
 
   const handleAddCart = () => {
-    dispatch(addToCart(cardItems?.card?.info));
+    dispatch(addToCart(cardItems));
   };
 
   const handleRemoveCart = () => {

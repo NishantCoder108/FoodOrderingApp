@@ -8,7 +8,10 @@ const RestaurantItemCard = ({ filterListItem = [] }) => {
   return (
     <div className="bg-slate-300">
       {filterListItem?.map((item) => (
-        <div key={item.card.info.id} className="flex justify-between  py-3">
+        <div
+          key={item.card.info.id + Math.random()}
+          className="flex justify-between  py-3"
+        >
           <div className="flex flex-col p-2  w-10/12 ">
             <span className="font-semibold">
               {item.card.info.name} - Rs.{" "}
