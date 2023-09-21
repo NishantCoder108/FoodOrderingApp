@@ -3,11 +3,13 @@ import { LOGO_URL } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { useContext } from "react";
 import userContext from "../utils/userContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const isOnline = useOnlineStatus();
   const userLogin = useContext(userContext);
-
+  const items = useSelector((store) => store.cartItems.items);
+  console.log(items);
   return (
     <div className="flex justify-between  bg-slate-100">
       <div className="">
@@ -26,7 +28,7 @@ const Header = () => {
             <Link to="/contact"> Contact Us</Link>
           </li>
           <li className="px-6">
-            <Link to="/cart"> Cart</Link>
+            <Link to="/cart"> Cart {} </Link>
           </li>
           <li className="px-6 font-bold">{userLogin.loggedInUser}</li>
           <li className="px-6">
