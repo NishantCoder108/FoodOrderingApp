@@ -1,7 +1,18 @@
+import { useDispatch } from "react-redux";
 import { CDN_IMG_URL } from "../utils/constants";
+import { addToCart, removeToCart } from "../app/CartSlice";
 
 const RestaurantImgCard = ({ cardItems }) => {
   const { imageId } = cardItems?.card?.info;
+  const dispatch = useDispatch();
+
+  const handleAddCart = () => {
+    dispatch(addToCart(cardItems?.card?.info));
+  };
+
+  const handleRemoveCart = () => {
+    dispatch(removeToCart());
+  };
   return (
     <div>
       {imageId ? (
@@ -11,10 +22,16 @@ const RestaurantImgCard = ({ cardItems }) => {
       )}
 
       <div className="bottom-[1.5rem] relative">
-        <button className="absolute left-[25%]   font-extrabold border  rounded-sm px-2 bg-white text-black">
+        <button
+          className="absolute left-[25%]   font-extrabold border  rounded-sm px-2 bg-white text-black"
+          onClick={handleAddCart}
+        >
           +
         </button>
-        <button className="absolute right-[25%]  font-extrabold border  rounded-sm px-2 bg-white text-black">
+        <button
+          className="absolute right-[25%]  font-extrabold border  rounded-sm px-2 bg-white text-black"
+          onClick={handleRemoveCart}
+        >
           -
         </button>{" "}
       </div>
